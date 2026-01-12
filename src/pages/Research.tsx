@@ -204,19 +204,6 @@ const Research = () => {
         </div>
       </section>
 
-      {/* Collaboration CTA */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-2xl font-bold text-foreground md:text-3xl">
-            Research Collaboration
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            We welcome collaborations with industry partners and academic
-            institutions. Contact us to explore research opportunities.
-          </p>
-          <button className="btn-primary mt-6">Contact Research Cell</button>
-        </div>
-      </section>
     </div>
   );
 };

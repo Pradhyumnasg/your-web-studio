@@ -124,19 +124,6 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Calendar CTA */}
-      <section className="bg-muted/50 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-2xl font-bold text-foreground md:text-3xl">
-            Academic Calendar
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            Download the complete academic calendar for important dates,
-            holidays, and examination schedules.
-          </p>
-          <button className="btn-primary mt-6">Download Calendar</button>
-        </div>
-      </section>
     </div>
   );
 };
