@@ -3,7 +3,7 @@ import { GraduationCap, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="hero-gradient mt-auto text-primary-foreground">
+    <footer className="hero-gradient mt-auto text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -16,7 +16,7 @@ const Footer = () => {
                 MCA Department
               </span>
             </Link>
-            <p className="text-sm text-primary-foreground/80">
+            <p className="text-sm text-white/80">
               Empowering future tech leaders with excellence in computer
               applications and innovation.
             </p>
@@ -30,7 +30,7 @@ const Footer = () => {
                 <li key={link}>
                   <Link
                     to={`/${link.toLowerCase().replace(" ", "-")}`}
-                    className="text-sm text-primary-foreground/80 transition-colors hover:text-secondary"
+                    className="text-sm text-white/80 transition-colors hover:text-secondary"
                   >
                     {link}
                   </Link>
@@ -48,7 +48,7 @@ const Footer = () => {
                   <li key={link}>
                     <Link
                       to="/portal"
-                      className="text-sm text-primary-foreground/80 transition-colors hover:text-secondary"
+                      className="text-sm text-white/80 transition-colors hover:text-secondary"
                     >
                       {link}
                     </Link>
@@ -62,15 +62,15 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-serif text-lg font-semibold">Contact Us</h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-sm text-primary-foreground/80">
+              <li className="flex items-start gap-3 text-sm text-white/80">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary" />
                 <span>Department of MCA, University Campus</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-primary-foreground/80">
+              <li className="flex items-center gap-3 text-sm text-white/80">
                 <Phone className="h-4 w-4 flex-shrink-0 text-secondary" />
                 <span>+91 XXXXX XXXXX</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-primary-foreground/80">
+              <li className="flex items-center gap-3 text-sm text-white/80">
                 <Mail className="h-4 w-4 flex-shrink-0 text-secondary" />
                 <span>mca@university.edu</span>
               </li>
@@ -78,8 +78,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-primary-foreground/20 pt-6">
-          <p className="text-center text-sm text-primary-foreground/60">
+        <div className="mt-10 border-t border-white/20 pt-6">
+          <p className="text-center text-sm text-white/60">
             © {new Date().getFullYear()} MCA Department. All rights reserved.
           </p>
         </div>
