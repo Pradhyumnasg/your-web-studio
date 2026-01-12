@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, GraduationCap, ChevronDown, CalendarCheck, BarChart3, Users } from "lucide-react";
+import { Menu, X, GraduationCap, ChevronDown, CalendarCheck, BarChart3, Users, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -22,16 +23,19 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 shadow-nav backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl backdrop-saturate-150 transition-all duration-300">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary md:h-12 md:w-12">
+          <Link to="/" className="group flex items-center gap-3 transition-transform duration-300 hover:scale-[1.02]">
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/80 shadow-lg shadow-primary/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-primary/30 md:h-12 md:w-12">
               <GraduationCap className="h-6 w-6 text-primary-foreground md:h-7 md:w-7" />
+              <div className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-secondary">
+                <Sparkles className="h-2.5 w-2.5 text-secondary-foreground" />
+              </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-serif text-lg font-bold text-primary md:text-xl">
+              <span className="font-serif text-lg font-bold text-foreground transition-colors group-hover:text-primary md:text-xl">
                 MCA Department
               </span>
               <span className="hidden text-xs text-muted-foreground md:block">
@@ -83,15 +87,21 @@ const Navbar = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+
+            {/* Theme Toggle */}
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card lg:hidden"
-          >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          {/* Right Side - Mobile */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/60 bg-card/80 backdrop-blur-sm transition-all duration-200 hover:bg-accent/10"
+            >
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}

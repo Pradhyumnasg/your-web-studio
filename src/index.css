@@ -67,42 +67,48 @@
   }
 
   .dark {
-    --background: 222 47% 8%;
+    --background: 222 47% 6%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 11%;
+    --card: 222 44% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 11%;
+    --popover: 222 44% 10%;
     --popover-foreground: 210 40% 98%;
 
+    /* Gold Primary in Dark Mode */
     --primary: 43 74% 49%;
-    --primary-foreground: 222 47% 11%;
+    --primary-foreground: 222 47% 8%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    /* Deep Navy Secondary */
+    --secondary: 43 74% 55%;
+    --secondary-foreground: 222 47% 8%;
 
-    --muted: 217 33% 17%;
+    --muted: 222 40% 14%;
     --muted-foreground: 215 20% 65%;
 
     --accent: 38 92% 50%;
-    --accent-foreground: 222 47% 11%;
+    --accent-foreground: 222 47% 8%;
 
-    --destructive: 0 63% 31%;
+    --destructive: 0 63% 40%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
+    --border: 222 35% 18%;
+    --input: 222 35% 18%;
     --ring: 43 74% 49%;
 
-    --sidebar-background: 240 5.9% 10%;
+    /* Dark mode gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(222 50% 12%) 50%, hsl(222 45% 15%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222 44% 10%) 0%, hsl(222 47% 8%) 100%);
+
+    --sidebar-background: 222 47% 8%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-primary: 43 74% 49%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 222 40% 14%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-border: 222 35% 18%;
+    --sidebar-ring: 43 74% 49%;
   }
 }
 
@@ -192,26 +198,47 @@
 
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.8s ease-out forwards;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
+    animation: slideUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
   }
 
   .animate-slide-in-right {
     animation: slideInRight 0.6s ease-out forwards;
   }
 
+  .animate-draw-line {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: drawLine 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+
+  .floating-icon {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .floating-icon.delay-100 {
+    animation-delay: 0.5s;
+  }
+
+  .floating-icon.delay-200 {
+    animation-delay: 1s;
+  }
+
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes slideUp {
     from { 
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
     to { 
       opacity: 1;
@@ -228,5 +255,28 @@
       opacity: 1;
       transform: translateX(0);
     }
+  }
+
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .delay-1000 {
+    animation-delay: 1s;
   }
 }
