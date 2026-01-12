@@ -73,10 +73,10 @@ const Events = () => {
       {/* Hero Section */}
       <section className="hero-gradient relative py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="animate-fade-in font-serif text-4xl font-bold text-primary-foreground md:text-5xl">
+          <h1 className="animate-fade-in font-serif text-4xl font-bold text-white md:text-5xl">
             Events & Activities
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl animate-slide-up text-primary-foreground/80">
+          <p className="mx-auto mt-4 max-w-2xl animate-slide-up text-white/80">
             Stay updated with workshops, seminars, competitions, and tech fests
           </p>
         </div>

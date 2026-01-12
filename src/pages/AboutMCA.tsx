@@ -6,10 +6,10 @@ const AboutMCA = () => {
       {/* Hero Section */}
       <section className="hero-gradient relative py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="animate-fade-in font-serif text-4xl font-bold text-primary-foreground md:text-5xl">
+          <h1 className="animate-fade-in font-serif text-4xl font-bold text-white md:text-5xl">
             About MCA Department
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl animate-slide-up text-primary-foreground/80">
+          <p className="mx-auto mt-4 max-w-2xl animate-slide-up text-white/80">
             Excellence in computer applications education since inception
           </p>
         </div>
