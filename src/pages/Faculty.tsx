@@ -67,19 +67,6 @@ const Faculty = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-muted/50 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-2xl font-bold text-foreground md:text-3xl">
-            Want to Join Our Team?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            We are always looking for talented educators and researchers to join
-            our department.
-          </p>
-          <button className="btn-primary mt-6">View Open Positions</button>
-        </div>
-      </section>
     </div>
   );
 };
