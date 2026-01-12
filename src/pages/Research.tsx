@@ -6,43 +6,49 @@ const researchAreas = [
     title: "Artificial Intelligence & Machine Learning",
     description:
       "Research in deep learning, natural language processing, computer vision, and intelligent systems.",
-    projects: 12,
+    patents: 5,
     publications: 25,
+    journals: 12,
   },
   {
     title: "Data Science & Big Data Analytics",
     description:
       "Working on data mining, predictive analytics, and large-scale data processing frameworks.",
-    projects: 8,
+    patents: 3,
     publications: 18,
+    journals: 8,
   },
   {
     title: "Cybersecurity & Network Security",
     description:
       "Focus on cryptography, ethical hacking, intrusion detection, and secure systems design.",
-    projects: 6,
+    patents: 4,
     publications: 14,
+    journals: 6,
   },
   {
     title: "Cloud Computing & Distributed Systems",
     description:
       "Research in cloud architecture, microservices, containerization, and serverless computing.",
-    projects: 5,
+    patents: 2,
     publications: 10,
+    journals: 5,
   },
   {
     title: "Internet of Things (IoT)",
     description:
       "Developing smart systems, sensor networks, and edge computing solutions.",
-    projects: 7,
+    patents: 6,
     publications: 12,
+    journals: 7,
   },
   {
     title: "Software Engineering",
     description:
       "Improving software development methodologies, testing, and quality assurance practices.",
-    projects: 4,
+    patents: 2,
     publications: 8,
+    journals: 4,
   },
 ];
 
@@ -142,13 +148,13 @@ const Research = () => {
                 <p className="mt-2 text-sm text-muted-foreground">
                   {area.description}
                 </p>
-                <div className="mt-4 flex gap-4 border-t border-border pt-4">
+                <div className="mt-4 flex gap-6 border-t border-border pt-4">
                   <div className="text-center">
                     <span className="block font-semibold text-primary">
-                      {area.projects}
+                      {area.patents}
                     </span>
                     <span className="text-xs text-muted-foreground">
-                      Projects
+                      Patent
                     </span>
                   </div>
                   <div className="text-center">
@@ -156,7 +162,15 @@ const Research = () => {
                       {area.publications}
                     </span>
                     <span className="text-xs text-muted-foreground">
-                      Publications
+                      Publication
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <span className="block font-semibold text-primary">
+                      {area.journals}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      Journal
                     </span>
                   </div>
                 </div>
