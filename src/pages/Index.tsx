@@ -10,9 +10,9 @@ const Index = () => {
       <section className="hero-gradient relative min-h-[85vh] flex items-center overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-secondary/10 blur-3xl animate-pulse" />
-          <div className="absolute top-1/2 -left-20 h-60 w-60 rounded-full bg-secondary/5 blur-3xl animate-pulse delay-1000" />
-          <div className="absolute bottom-20 right-1/4 h-40 w-40 rounded-full bg-primary-foreground/5 blur-2xl animate-pulse delay-500" />
+          <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-secondary/20 blur-3xl animate-pulse" />
+          <div className="absolute top-1/2 -left-20 h-60 w-60 rounded-full bg-secondary/10 blur-3xl animate-pulse delay-1000" />
+          <div className="absolute bottom-20 right-1/4 h-40 w-40 rounded-full bg-white/5 blur-2xl animate-pulse delay-500" />
         </div>
         
         {/* Grid Pattern */}
@@ -26,7 +26,7 @@ const Index = () => {
               <span>Excellence in Technology Education</span>
             </div>
             
-            <h1 className="animate-fade-in font-serif text-4xl font-bold text-primary-foreground md:text-6xl lg:text-7xl leading-tight">
+            <h1 className="animate-fade-in font-serif text-4xl font-bold text-white md:text-6xl lg:text-7xl leading-tight">
               Master of{" "}
               <span className="text-gradient relative">
                 Computer Applications
@@ -36,7 +36,7 @@ const Index = () => {
               </span>
             </h1>
             
-            <p className="mt-8 animate-slide-up text-lg text-primary-foreground/80 md:text-xl lg:text-2xl max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-8 animate-slide-up text-lg text-white/80 md:text-xl lg:text-2xl max-w-2xl mx-auto leading-relaxed">
               Shaping tomorrow's tech leaders through excellence in education,
               research, and innovation in computer science.
             </p>
@@ -51,7 +51,7 @@ const Index = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="h-14 px-8 text-base border-2 border-primary-foreground/30 bg-primary-foreground/5 text-primary-foreground backdrop-blur-sm hover:bg-primary-foreground/15 hover:border-primary-foreground/50 transition-all duration-300"
+                className="h-14 px-8 text-base border-2 border-white/30 bg-white/5 text-white backdrop-blur-sm hover:bg-white/15 hover:border-white/50 transition-all duration-300"
                 asChild
               >
                 <Link to="/portal/attendance">Student Portal</Link>
@@ -61,13 +61,13 @@ const Index = () => {
             {/* Floating Icons */}
             <div className="mt-16 flex justify-center gap-8 opacity-60">
               <div className="floating-icon">
-                <Code2 className="h-8 w-8 text-primary-foreground/40" />
+                <Code2 className="h-8 w-8 text-white/40" />
               </div>
               <div className="floating-icon delay-100">
-                <GraduationCap className="h-8 w-8 text-primary-foreground/40" />
+                <GraduationCap className="h-8 w-8 text-white/40" />
               </div>
               <div className="floating-icon delay-200">
-                <BookOpen className="h-8 w-8 text-primary-foreground/40" />
+                <BookOpen className="h-8 w-8 text-white/40" />
               </div>
             </div>
           </div>
