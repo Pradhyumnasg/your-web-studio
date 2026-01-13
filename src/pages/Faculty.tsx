@@ -27,7 +27,7 @@ const facultyData = [
     email: "subhashree@bitm.edu.in",
   },
   {
-    name: "Ms. Jennifer Mary S",
+    name: "Mrs. Jennifer Mary S",
     designation: "Asst Professor",
     teachingExp: "8 Years",
     email: "jennifermary.sagayraj@gmail.com",
