@@ -1,9 +1,9 @@
-import { Mail, BookOpen } from "lucide-react";
+import { Mail, Clock } from "lucide-react";
 
 interface FacultyCardProps {
   name: string;
   designation: string;
-  specialization: string;
+  teachingExp: string;
   email: string;
   image?: string;
 }
@@ -11,7 +11,7 @@ interface FacultyCardProps {
 const FacultyCard = ({
   name,
   designation,
-  specialization,
+  teachingExp,
   email,
   image,
 }: FacultyCardProps) => {
@@ -42,8 +42,8 @@ const FacultyCard = ({
         <p className="text-sm font-medium text-secondary">{designation}</p>
         <div className="mt-3 space-y-2">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <BookOpen className="h-4 w-4 text-primary/60" />
-            <span>{specialization}</span>
+            <Clock className="h-4 w-4 text-primary/60" />
+            <span>{teachingExp} Experience</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Mail className="h-4 w-4 text-primary/60" />
