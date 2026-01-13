@@ -1,54 +1,72 @@
 import FacultyCard from "@/components/public/FacultyCard";
 
-// Placeholder faculty data - you'll replace this with real data
+// Import faculty images
+import girishKumarImg from "@/assets/faculty/girish-kumar.jpg";
+import hayathAliImg from "@/assets/faculty/hayath-ali.jpg";
+import jenniferMaryImg from "@/assets/faculty/jennifer-mary.jpg";
+import mmHarshithaImg from "@/assets/faculty/mm-harshitha.jpg";
+import nidaFatimaImg from "@/assets/faculty/nida-fatima.jpg";
+import prakashImg from "@/assets/faculty/prakash.jpg";
+import sharvaniImg from "@/assets/faculty/sharvani.jpg";
+import sreelakshmiImg from "@/assets/faculty/sreelakshmi-joshi.jpg";
+import subhashreeImg from "@/assets/faculty/subhashree.jpg";
+
 const facultyData = [
   {
     name: "Dr. Girish Kumar D",
     designation: "Professor & HOD",
     teachingExp: "13 Years",
     email: "girishkumar@bitm.edu.in",
+    image: girishKumarImg,
   },
   {
     name: "Dr. Hayath Ali",
     designation: "Associate Professor",
     teachingExp: "16 Years",
     email: "dr.hayathali@bitm.edu.in",
+    image: hayathAliImg,
   },
   {
     name: "Mrs. Sharvani",
     designation: "Asst Professor",
     teachingExp: "11 Years",
     email: "sharvan@bitm.edu.in",
+    image: sharvaniImg,
   },
   {
     name: "Mrs. Subhashree S",
     designation: "Asst Professor",
     teachingExp: "2 Years",
     email: "subhashree@bitm.edu.in",
+    image: subhashreeImg,
   },
   {
     name: "Mrs. Jennifer Mary S",
     designation: "Asst Professor",
     teachingExp: "8 Years",
     email: "jennifermary.sagayraj@gmail.com",
+    image: jenniferMaryImg,
   },
   {
     name: "Mr. Prakash Sarangamath",
     designation: "Asst Professor",
     teachingExp: "12 Years",
     email: "prakash.sarangamath@bitm.edu.in",
+    image: prakashImg,
   },
   {
     name: "Ms. MM Harshitha",
     designation: "Asst Professor",
     teachingExp: "3 Years",
     email: "harshitha@bitm.edu.in",
+    image: mmHarshithaImg,
   },
   {
     name: "Ms. Sreelakshmi Joshi",
     designation: "Asst Professor",
     teachingExp: "0-1 Year",
     email: "sreelakshmijoshi07@gmail.com",
+    image: sreelakshmiImg,
   },
   {
     name: "Mr. Pradhyumn SG",
@@ -61,6 +79,7 @@ const facultyData = [
     designation: "Asst Professor",
     teachingExp: "0-1 Year",
     email: "nidakhan18122000@bitm.edu.in",
+    image: nidaFatimaImg,
   },
 ];
 
