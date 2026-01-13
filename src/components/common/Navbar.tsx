@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, GraduationCap, ChevronDown, CalendarCheck, BarChart3, Users, Sparkles } from "lucide-react";
+import { Menu, X, ChevronDown, CalendarCheck, BarChart3, Users } from "lucide-react";
+import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -27,21 +28,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link to="/" className="group flex items-center gap-3 transition-transform duration-300 hover:scale-[1.02]">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/80 shadow-lg shadow-primary/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-primary/30 md:h-12 md:w-12">
-              <GraduationCap className="h-6 w-6 text-primary-foreground md:h-7 md:w-7" />
-              <div className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-secondary">
-                <Sparkles className="h-2.5 w-2.5 text-secondary-foreground" />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-lg font-bold text-foreground transition-colors group-hover:text-primary md:text-xl">
-                MCA Department
-              </span>
-              <span className="hidden text-xs text-muted-foreground md:block">
-                Master of Computer Applications
-              </span>
-            </div>
+          <Link to="/" className="group flex items-center transition-transform duration-300 hover:scale-[1.02]">
+            <img 
+              src={logo} 
+              alt="BITM MCA - Future Ready Computer Graduates" 
+              className="h-12 w-auto md:h-14"
+            />
           </Link>
 
           {/* Desktop Navigation */}
