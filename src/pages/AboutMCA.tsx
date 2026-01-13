@@ -18,32 +18,56 @@ const AboutMCA = () => {
       {/* Vision & Mission */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="card-elevated rounded-xl bg-card p-8">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                <Eye className="h-7 w-7 text-primary" />
+          <div className="mx-auto max-w-4xl">
+            <h2 className="section-heading text-center font-serif text-3xl font-bold text-foreground mx-auto">
+              Vision & Mission
+            </h2>
+            
+            {/* Vision */}
+            <div className="mt-12 card-elevated rounded-xl bg-card p-8">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
+                  <Eye className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="font-serif text-2xl font-bold text-foreground">
+                  Vision
+                </h3>
               </div>
-              <h2 className="font-serif text-2xl font-bold text-foreground">
-                Our Vision
-              </h2>
-              <p className="mt-4 leading-relaxed text-muted-foreground">
-                To be a center of excellence in computer applications education,
-                producing industry-ready professionals who contribute to
-                technological advancement and societal development.
+              <p className="leading-relaxed text-muted-foreground text-lg">
+                "To prepare students for the challenges of the future, while fostering innovation and advancing technology, through education"
               </p>
             </div>
-            <div className="card-elevated rounded-xl bg-card p-8">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-secondary/20">
-                <Target className="h-7 w-7 text-secondary" />
+
+            {/* Mission */}
+            <div className="mt-6 card-elevated rounded-xl bg-card p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-secondary/20">
+                  <Target className="h-7 w-7 text-secondary" />
+                </div>
+                <h3 className="font-serif text-2xl font-bold text-foreground">
+                  Mission
+                </h3>
               </div>
-              <h2 className="font-serif text-2xl font-bold text-foreground">
-                Our Mission
-              </h2>
-              <p className="mt-4 leading-relaxed text-muted-foreground">
-                To provide quality education in computer applications, foster
-                innovation and research, and develop ethical professionals
-                capable of meeting global challenges.
-              </p>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+                  <span className="text-muted-foreground leading-relaxed">
+                    To impart high-standard, value-based technical education in all aspects of Computer Applications.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+                  <span className="text-muted-foreground leading-relaxed">
+                    To cultivate ethical, motivated, and skilled postgraduates through a blend of theoretical knowledge and practical applications.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+                  <span className="text-muted-foreground leading-relaxed">
+                    To nurture proficient professionals among students, empowering them to serve society through research and innovation.
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
