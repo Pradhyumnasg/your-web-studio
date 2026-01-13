@@ -28,12 +28,20 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link to="/" className="group flex items-center transition-transform duration-300 hover:scale-[1.02]">
+          <Link to="/" className="group flex items-center gap-3 transition-transform duration-300 hover:scale-[1.02]">
             <img 
               src={logo} 
               alt="BITM MCA - Future Ready Computer Graduates" 
               className="h-12 w-auto md:h-14"
             />
+            <div className="flex flex-col">
+              <span className="font-serif text-lg font-bold text-foreground transition-colors group-hover:text-primary md:text-xl">
+                MCA Department
+              </span>
+              <span className="hidden text-xs text-muted-foreground md:block">
+                Master of Computer Applications
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
