@@ -11,6 +11,7 @@ import Faculty from "./pages/Faculty";
 import Events from "./pages/Events";
 import Research from "./pages/Research";
 import Portal from "./pages/Portal";
+import Proctoring from "./pages/Proctoring";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
               <Route path="/events" element={<Events />} />
               <Route path="/research" element={<Research />} />
               <Route path="/portal" element={<Portal />} />
+              <Route path="/portal/proctoring" element={<Proctoring />} />
             </Route>
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
