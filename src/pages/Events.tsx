@@ -107,10 +107,10 @@ const Events = () => {
       {/* Hero Section */}
       <section className="hero-gradient relative py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="animate-fade-in font-serif text-4xl font-bold text-white md:text-5xl">
+          <h1 className="animate-fade-in font-serif text-4xl font-bold text-white md:text-6xl">
             Clubs & Activities
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl animate-slide-up text-white/80">
+          <p className="mx-auto mt-4 max-w-2xl animate-slide-up text-lg text-white/80 md:text-xl">
             Explore our vibrant clubs fostering creativity, sports, technology, and personal growth
           </p>
         </div>
@@ -124,20 +124,20 @@ const Events = () => {
               <div
                 key={index}
                 onClick={() => setSelectedClub(club)}
-                className="card-elevated group cursor-pointer rounded-xl bg-card p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]"
+                className="card-elevated group cursor-pointer rounded-xl bg-card p-8 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <club.icon className="h-6 w-6" />
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <club.icon className="h-7 w-7" />
                 </div>
-                <h3 className="mb-3 font-serif text-xl font-bold text-foreground">
+                <h3 className="mb-3 font-serif text-2xl font-bold text-foreground">
                   {club.name}
                 </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
+                <p className="text-base leading-relaxed text-muted-foreground">
                   {club.description}
                 </p>
                 {club.events.length > 0 && (
-                  <div className="mt-4 flex items-center gap-2 text-sm text-primary">
-                    <Calendar className="h-4 w-4" />
+                  <div className="mt-4 flex items-center gap-2 text-base text-primary">
+                    <Calendar className="h-5 w-5" />
                     <span>{club.events.length} event{club.events.length > 1 ? 's' : ''}</span>
                   </div>
                 )}
@@ -149,35 +149,35 @@ const Events = () => {
 
       {/* Club Events Dialog */}
       <Dialog open={!!selectedClub} onOpenChange={() => setSelectedClub(null)}>
-        <DialogContent className="max-h-[80vh] overflow-y-auto sm:max-w-lg">
+        <DialogContent className="max-h-[80vh] overflow-y-auto sm:max-w-xl">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-3 font-serif text-2xl">
-              {selectedClub && <selectedClub.icon className="h-6 w-6 text-primary" />}
+            <DialogTitle className="flex items-center gap-3 font-serif text-2xl md:text-3xl">
+              {selectedClub && <selectedClub.icon className="h-7 w-7 text-primary" />}
               {selectedClub?.name}
             </DialogTitle>
-            <DialogDescription className="text-muted-foreground">
+            <DialogDescription className="text-base text-muted-foreground">
               {selectedClub?.description}
             </DialogDescription>
           </DialogHeader>
           
           <div className="mt-4">
-            <h4 className="mb-4 font-semibold text-foreground">Events</h4>
+            <h4 className="mb-4 text-lg font-semibold text-foreground">Events</h4>
             {selectedClub?.events.length === 0 ? (
-              <p className="text-sm text-muted-foreground">No events recorded yet.</p>
+              <p className="text-base text-muted-foreground">No events recorded yet.</p>
             ) : (
               <div className="space-y-4">
                 {selectedClub?.events.map((event, idx) => (
                   <div
                     key={idx}
-                    className="rounded-lg border border-border bg-muted/30 p-4"
+                    className="rounded-lg border border-border bg-muted/30 p-5"
                   >
                     <div className="mb-2 flex items-center justify-between">
-                      <h5 className="font-medium text-foreground">{event.name}</h5>
-                      <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                      <h5 className="text-lg font-medium text-foreground">{event.name}</h5>
+                      <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
                         {event.date}
                       </span>
                     </div>
-                    <p className="text-sm text-muted-foreground">{event.description}</p>
+                    <p className="text-base text-muted-foreground">{event.description}</p>
                   </div>
                 ))}
               </div>
