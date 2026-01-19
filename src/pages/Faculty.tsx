@@ -10,6 +10,8 @@ import prakashImg from "@/assets/faculty/prakash.jpg";
 import sharvaniImg from "@/assets/faculty/sharvani.jpg";
 import sreelakshmiImg from "@/assets/faculty/sreelakshmi-joshi.jpg";
 import subhashreeImg from "@/assets/faculty/subhashree.jpg";
+import pawanKumarImg from "@/assets/faculty/pawan-kumar.jpg";
+import pradhyumnImg from "@/assets/faculty/pradhyumn-sg.jpg";
 
 const facultyData = [
   {
@@ -36,7 +38,7 @@ const facultyData = [
   {
     name: "Mrs. Subhashree S",
     designation: "Asst Professor",
-    teachingExp: "2 Years",
+    teachingExp: "3 Years",
     email: "subhashree@bitm.edu.in",
     image: subhashreeImg,
   },
@@ -73,6 +75,7 @@ const facultyData = [
     designation: "Asst Professor",
     teachingExp: "0-1 Year",
     email: "pradhyumna@bitm.edu.in",
+    image: pradhyumnImg,
   },
   {
     name: "Ms. Nida Fatima K",
@@ -80,6 +83,16 @@ const facultyData = [
     teachingExp: "0-1 Year",
     email: "nidakhan18122000@bitm.edu.in",
     image: nidaFatimaImg,
+  },
+];
+
+const nonFacultyData = [
+  {
+    name: "Mr. Pawan Kumar",
+    designation: "Instructor",
+    teachingExp: "3 Years",
+    email: "pawankumar@bitm.edu.in",
+    image: pawanKumarImg,
   },
 ];
 
@@ -102,9 +115,26 @@ const Faculty = () => {
       {/* Faculty Grid */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
+          <h2 className="mb-8 font-serif text-2xl font-bold text-foreground md:text-3xl">
+            Faculty Members
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {facultyData.map((faculty) => (
               <FacultyCard key={faculty.email} {...faculty} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Non-Faculty Grid */}
+      <section className="pb-16 md:pb-24">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-8 font-serif text-2xl font-bold text-foreground md:text-3xl">
+            Non-Teaching Staff
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {nonFacultyData.map((staff) => (
+              <FacultyCard key={staff.email} {...staff} />
             ))}
           </div>
         </div>
