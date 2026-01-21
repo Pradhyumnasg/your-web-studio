@@ -12,6 +12,7 @@ import sreelakshmiImg from "@/assets/faculty/sreelakshmi-joshi.jpg";
 import subhashreeImg from "@/assets/faculty/subhashree.jpg";
 import pawanKumarImg from "@/assets/faculty/pawan-kumar.jpg";
 import pradhyumnImg from "@/assets/faculty/pradhyumn-sg.jpg";
+import vamshiImg from "@/assets/faculty/vamshi.jpg";
 
 const facultyData = [
   {
@@ -93,6 +94,11 @@ const nonFacultyData = [
     teachingExp: "3 Years",
     email: "pawankumar@bitm.edu.in",
     image: pawanKumarImg,
+  },
+  {
+    name: "Mr. Vamshi",
+    designation: "Attender",
+    image: vamshiImg,
   },
 ];
 
