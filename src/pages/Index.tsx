@@ -2,12 +2,21 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Users, BookOpen, Award, Calendar, Zap, GraduationCap, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import StatCard from "@/components/public/StatCard";
+import collegeBuilding from "@/assets/college-building.webp";
 
 const Index = () => {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="hero-gradient relative min-h-[85vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${collegeBuilding})` }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-primary/80" />
+        
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-secondary/20 blur-3xl animate-pulse" />
