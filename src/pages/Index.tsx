@@ -80,24 +80,19 @@ const Index = () => {
       {/* Stats Section */}
       <section className="relative -mt-16 z-10">
         <div className="container mx-auto px-4">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-3">
             <StatCard
-              value="500+"
+              value="250+"
               label="Students"
               icon={<Users className="h-6 w-6" />}
             />
             <StatCard
-              value="25+"
+              value="10+"
               label="Faculty Members"
               icon={<BookOpen className="h-6 w-6" />}
             />
             <StatCard
-              value="95%"
-              label="Placement Rate"
-              icon={<Award className="h-6 w-6" />}
-            />
-            <StatCard
-              value="50+"
+              value="10+"
               label="Events Yearly"
               icon={<Calendar className="h-6 w-6" />}
             />
