@@ -11,7 +11,6 @@ import sharvaniImg from "@/assets/faculty/sharvani.jpg";
 import sreelakshmiImg from "@/assets/faculty/sreelakshmi-joshi.jpg";
 import subhashreeImg from "@/assets/faculty/subhashree.jpg";
 import pawanKumarImg from "@/assets/faculty/pawan-kumar.jpg";
-import pradhyumnImg from "@/assets/faculty/pradhyumn-sg.jpg";
 import vamshiImg from "@/assets/faculty/vamshi.jpg";
 
 const facultyData = [
@@ -76,7 +75,7 @@ const facultyData = [
     designation: "Asst Professor",
     teachingExp: "0-1 Year",
     email: "pradhyumna@bitm.edu.in",
-    image: pradhyumnImg,
+    // Image removed - HEIC format not supported by browsers, needs JPG/PNG
   },
   {
     name: "Ms. Nida Fatima K",

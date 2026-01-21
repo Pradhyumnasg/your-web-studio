@@ -17,12 +17,12 @@ const FacultyCard = ({
 }: FacultyCardProps) => {
   return (
     <div className="card-elevated group overflow-hidden rounded-xl bg-card">
-      <div className="aspect-square overflow-hidden bg-muted">
+      <div className="aspect-[3/4] overflow-hidden bg-muted">
         {image ? (
           <img
             src={image}
             alt={name}
-            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
