@@ -181,24 +181,53 @@ const AboutMCA = () => {
               Upon completion of the MCA program, students will be able to:
             </p>
           </div>
-          <div className="mx-auto mt-10 max-w-2xl">
+          <div className="mx-auto mt-10 max-w-4xl">
             <ul className="space-y-4">
               {[
-                "Apply software engineering principles to design and develop applications",
-                "Analyze complex computing problems using computational thinking",
-                "Design and implement secure, scalable software solutions",
-                "Work effectively in teams with professional ethics",
-                "Communicate effectively with technical and non-technical stakeholders",
-                "Engage in lifelong learning and adapt to emerging technologies",
+                {
+                  title: "Foundation Knowledge",
+                  description: "Apply knowledge of mathematics, programming logic and coding fundamentals for solution architecture and problem solving."
+                },
+                {
+                  title: "Problem Analysis",
+                  description: "Identify, review formulate and analyse problems for primarily focusing on customer requirements using critical thinking frameworks."
+                },
+                {
+                  title: "Development of Solutions",
+                  description: "Design, develop and investigate problems with as an innovative approach for solutions incorporating ESG/SDG goals."
+                },
+                {
+                  title: "Modern Tool Usage",
+                  description: "Select, adapt and apply modern computational tools such as development of algorithms with an understanding of the limitations including human biases."
+                },
+                {
+                  title: "Individual and Team Work",
+                  description: "Function and communicate effectively as an individual or a team leader in diverse and multidisciplinary groups. Use methodologies such as agile."
+                },
+                {
+                  title: "Project Management and Finance",
+                  description: "Use the principles of project management such as scheduling, work breakdown structure and be conversant with the principles of Finance for profitable project management."
+                },
+                {
+                  title: "Ethics",
+                  description: "Commit to professional ethics in managing software projects with financial aspects. Learn to use new technologies for cyber security and insulate customers from malware."
+                },
+                {
+                  title: "Life-long Learning",
+                  description: "Change management skills and the ability to learn, keep up with contemporary technologies and ways of working."
+                },
               ].map((outcome, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-4 rounded-lg bg-card p-4 shadow-sm"
+                  className="flex items-start gap-4 rounded-lg bg-card p-5 shadow-sm"
                 >
                   <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-secondary text-sm font-bold text-secondary-foreground">
                     {index + 1}
                   </span>
-                  <span className="text-foreground">{outcome}</span>
+                  <div>
+                    <h4 className="font-semibold text-foreground">{outcome.title}</h4>
+                    <p className="mt-1 text-muted-foreground">{outcome.description}</p>
+                  </div>
                 </li>
               ))}
             </ul>
