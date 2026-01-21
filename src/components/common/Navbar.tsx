@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, CalendarCheck, BarChart3, Users } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/bitm-logo.png";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -31,17 +31,9 @@ const Navbar = () => {
           <Link to="/" className="group flex items-center gap-3 transition-transform duration-300 hover:scale-[1.02]">
             <img 
               src={logo} 
-              alt="BITM MCA - Future Ready Computer Graduates" 
+              alt="BITM - Ballari Institute of Technology & Management" 
               className="h-12 w-auto md:h-14"
             />
-            <div className="flex flex-col">
-              <span className="font-serif text-lg font-bold text-foreground transition-colors group-hover:text-primary md:text-xl">
-                MCA Department
-              </span>
-              <span className="hidden text-xs text-muted-foreground md:block">
-                Master of Computer Applications
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
