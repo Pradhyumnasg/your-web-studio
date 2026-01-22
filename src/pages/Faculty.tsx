@@ -46,7 +46,7 @@ const facultyData = [
     name: "Mrs. Jennifer Mary S",
     designation: "Asst Professor",
     teachingExp: "8 Years",
-    email: "jennifermary.sagayraj@gmail.com",
+    email: "jennifermary@bitm.edu.in",
     image: jenniferMaryImg,
   },
   {
@@ -67,7 +67,7 @@ const facultyData = [
     name: "Ms. Sreelakshmi Joshi",
     designation: "Asst Professor",
     teachingExp: "0-1 Year",
-    email: "sreelakshmijoshi07@gmail.com",
+    email: "sreelakshmi.j@bitm.edu.in",
     image: sreelakshmiImg,
   },
   {
@@ -88,10 +88,10 @@ const facultyData = [
 
 const nonFacultyData = [
   {
-    name: "Mr. Pawan Kumar",
+    name: "Mr. Pavan Kumar",
     designation: "Instructor",
     teachingExp: "3 Years",
-    email: "pawankumar@bitm.edu.in",
+    email: "pavanym@bitm.edu.in",
     image: pawanKumarImg,
   },
   {
