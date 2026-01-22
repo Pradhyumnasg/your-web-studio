@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, CalendarCheck, BarChart3, Users, FileText, BookOpen } from "lucide-react";
+import { Menu, X, ChevronDown, CalendarCheck, BarChart3, Users, FileText, BookOpen, MessageSquare } from "lucide-react";
 import logo from "@/assets/bitm-logo.png";
 import { Button } from "@/components/ui/button";
 import {
@@ -89,6 +89,12 @@ const Navbar = () => {
                     Proctoring (Mentorship Info)
                   </Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/portal/faculty-feedback" className="flex items-center gap-2 cursor-pointer">
+                    <MessageSquare className="h-4 w-4" />
+                    Faculty Feedback
+                  </Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -167,6 +173,14 @@ const Navbar = () => {
                 >
                   <Users className="h-4 w-4" />
                   Proctoring (Mentorship Info)
+                </Link>
+                <Link
+                  to="/portal/faculty-feedback"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-foreground/80 hover:bg-muted"
+                >
+                  <MessageSquare className="h-4 w-4" />
+                  Faculty Feedback
                 </Link>
               </div>
             </div>
