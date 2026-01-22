@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, CalendarCheck, BarChart3, Users } from "lucide-react";
+import { Menu, X, ChevronDown, CalendarCheck, BarChart3, Users, FileText, BookOpen } from "lucide-react";
 import logo from "@/assets/bitm-logo.png";
 import { Button } from "@/components/ui/button";
 import {
@@ -50,15 +50,27 @@ const Navbar = () => {
               </Link>
             ))}
             
-            {/* Student Portal Dropdown */}
+            {/* Review Meeting Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="nav-link flex items-center gap-1">
-                  Student Portal
+                  Review Meeting
                   <ChevronDown className="h-4 w-4" />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56 bg-card border border-border shadow-lg z-50">
+                <DropdownMenuItem asChild>
+                  <Link to="/portal/agenda" className="flex items-center gap-2 cursor-pointer">
+                    <FileText className="h-4 w-4" />
+                    Agenda
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/portal/syllabus" className="flex items-center gap-2 cursor-pointer">
+                    <BookOpen className="h-4 w-4" />
+                    Syllabus
+                  </Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link to="/portal/attendance" className="flex items-center gap-2 cursor-pointer">
                     <CalendarCheck className="h-4 w-4" />
@@ -115,7 +127,23 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="mt-2 border-t border-border pt-4">
-                <p className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase">Student Portal</p>
+                <p className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase">Review Meeting</p>
+                <Link
+                  to="/portal/agenda"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-foreground/80 hover:bg-muted"
+                >
+                  <FileText className="h-4 w-4" />
+                  Agenda
+                </Link>
+                <Link
+                  to="/portal/syllabus"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-foreground/80 hover:bg-muted"
+                >
+                  <BookOpen className="h-4 w-4" />
+                  Syllabus
+                </Link>
                 <Link
                   to="/portal/attendance"
                   onClick={() => setIsOpen(false)}
