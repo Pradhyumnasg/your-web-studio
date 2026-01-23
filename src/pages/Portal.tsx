@@ -55,12 +55,12 @@ const Portal = () => {
           </p>
           
           {/* Links Section */}
-          <div className="mt-12 flex flex-col items-center gap-4">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
             {portalFeatures.map((feature) => (
               <Link
                 key={feature.title}
                 to={feature.path}
-                className="group flex items-center gap-3 text-lg font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors"
+                className="group flex items-center justify-center gap-3 rounded-lg bg-white/10 px-6 py-4 text-lg font-medium text-primary-foreground/90 hover:bg-white/20 hover:text-primary-foreground transition-all"
               >
                 <feature.icon className="h-5 w-5" />
                 {feature.title}

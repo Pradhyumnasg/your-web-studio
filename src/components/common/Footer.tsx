@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="hero-gradient mt-auto text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-3">
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3">
@@ -36,25 +36,6 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Student Portal */}
-          <div className="space-y-4">
-            <h4 className="font-serif text-lg font-semibold">Student Portal</h4>
-            <ul className="space-y-2">
-              {["Attendance", "IA Performance", "Proctoring", "Feedback"].map(
-                (link) => (
-                  <li key={link}>
-                    <Link
-                      to="/portal"
-                      className="text-sm text-white/80 transition-colors hover:text-secondary"
-                    >
-                      {link}
-                    </Link>
-                  </li>
-                )
-              )}
             </ul>
           </div>
 
