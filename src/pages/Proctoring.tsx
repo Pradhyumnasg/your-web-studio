@@ -104,7 +104,7 @@ const sectionBProctors: Proctor[] = [
   {
     name: "Mrs. Jennifer Mary S",
     designation: "Asst Professor",
-    email: "jennifermary.sagayraj@gmail.com",
+    email: "jennifermary@bitm.edu.in",
     image: jenniferMaryImg,
     students: [
       { rollNo: 48, usn: "22BI25MCA091-T", name: "M A TARASREE" },
@@ -152,7 +152,7 @@ const sectionBProctors: Proctor[] = [
   {
     name: "Ms. Sreelakshmi Joshi",
     designation: "Asst Professor",
-    email: "sreelakshmijoshi07@gmail.com",
+    email: "sreelakshmi.j@bitm.edu.in",
     image: sreelakshmiImg,
     students: [
       { rollNo: 80, usn: "22BI25MCA061-T", name: "SUSHMA J" },
