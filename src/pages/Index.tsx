@@ -26,10 +26,10 @@ const Index = () => {
               <span>Excellence in Technology Education</span>
             </div>
             
-            <p className="animate-fade-in text-lg md:text-xl text-white/70 font-medium tracking-wide mb-2">
+            <h1 className="animate-fade-in font-serif text-3xl font-bold text-white md:text-5xl lg:text-6xl leading-tight mb-2">
               Ballari Institute of Technology & Management
-            </p>
-            <h1 className="animate-fade-in font-serif text-4xl font-bold text-white md:text-6xl lg:text-7xl leading-tight">
+            </h1>
+            <h2 className="animate-fade-in font-serif text-2xl font-semibold text-white/90 md:text-4xl lg:text-5xl leading-tight">
               Master of{" "}
               <span className="text-gradient relative">
                 Computer Applications
@@ -37,7 +37,7 @@ const Index = () => {
                   <path d="M1 8.5C50 3 150 1 299 8.5" stroke="hsl(43 74% 49%)" strokeWidth="3" strokeLinecap="round" className="animate-draw-line" />
                 </svg>
               </span>
-            </h1>
+            </h2>
             
             <p className="mt-8 animate-slide-up text-lg text-white/80 md:text-xl lg:text-2xl max-w-2xl mx-auto leading-relaxed">
               Shaping tomorrow's tech leaders through excellence in education,
