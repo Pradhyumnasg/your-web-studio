@@ -26,6 +26,9 @@ const Index = () => {
               <span>Excellence in Technology Education</span>
             </div>
             
+            <p className="animate-fade-in text-lg md:text-xl text-white/70 font-medium tracking-wide mb-2">
+              Ballari Institute of Technology & Management
+            </p>
             <h1 className="animate-fade-in font-serif text-4xl font-bold text-white md:text-6xl lg:text-7xl leading-tight">
               Master of{" "}
               <span className="text-gradient relative">
