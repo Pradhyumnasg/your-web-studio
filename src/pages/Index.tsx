@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, BookOpen, Award, Calendar, Zap, GraduationCap, Code2 } from "lucide-react";
+import { ArrowRight, Users, BookOpen, Calendar, Zap, GraduationCap, Code2, FileText, BarChart3, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import StatCard from "@/components/public/StatCard";
 
@@ -143,6 +143,36 @@ const Index = () => {
               </div>
               <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 blur-sm" />
               <div className="absolute -top-6 -left-6 h-24 w-24 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 blur-sm" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Review Meeting Section */}
+      <section className="hero-gradient py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="font-serif text-3xl font-bold text-primary-foreground md:text-4xl">
+              Review Meeting
+            </h2>
+            <div className="mt-8 flex flex-col items-center gap-4">
+              {[
+                { title: "Agenda", path: "/portal/agenda", icon: FileText },
+                { title: "Syllabus", path: "/portal/syllabus", icon: BookOpen },
+                { title: "Attendance", path: "/portal/attendance", icon: Calendar },
+                { title: "IA Performance", path: "/portal/ia-performance", icon: BarChart3 },
+                { title: "Proctoring", path: "/portal/proctoring", icon: Users },
+                { title: "Feedback", path: "/portal/faculty-feedback", icon: MessageSquare },
+              ].map((item) => (
+                <Link
+                  key={item.title}
+                  to={item.path}
+                  className="group flex items-center gap-3 text-lg font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors"
+                >
+                  <item.icon className="h-5 w-5" />
+                  {item.title}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
