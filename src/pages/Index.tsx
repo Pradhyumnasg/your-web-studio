@@ -51,14 +51,6 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="h-14 px-8 text-base border-2 border-white/30 bg-white/5 text-white backdrop-blur-sm hover:bg-white/15 hover:border-white/50 transition-all duration-300"
-                asChild
-              >
-                <Link to="/portal/attendance">Student Portal</Link>
-              </Button>
             </div>
 
             {/* Floating Icons */}
