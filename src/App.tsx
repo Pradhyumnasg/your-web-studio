@@ -14,6 +14,7 @@ import Portal from "./pages/Portal";
 import Proctoring from "./pages/Proctoring";
 import Agenda from "./pages/Agenda";
 import Syllabus from "./pages/Syllabus";
+import Attendance from "./pages/Attendance";
 import FacultyFeedback from "./pages/FacultyFeedback";
 import NotFound from "./pages/NotFound";
 
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/portal" element={<Portal />} />
               <Route path="/portal/agenda" element={<Agenda />} />
               <Route path="/portal/syllabus" element={<Syllabus />} />
+              <Route path="/portal/attendance" element={<Attendance />} />
               <Route path="/portal/proctoring" element={<Proctoring />} />
               <Route path="/portal/faculty-feedback" element={<FacultyFeedback />} />
             </Route>
