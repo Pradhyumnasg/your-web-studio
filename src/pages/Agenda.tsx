@@ -1,4 +1,4 @@
-import { BookOpen, CalendarCheck, BarChart3, Users, MessageSquare } from "lucide-react";
+import { BookOpen, BarChart3, Users, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
@@ -8,14 +8,9 @@ const quickLinks = [
     path: "/portal/syllabus",
   },
   {
-    title: "Attendance Dashboard",
-    icon: CalendarCheck,
-    path: "/portal/attendance",
-  },
-  {
     title: "IA Performance & Analytics",
     icon: BarChart3,
-    path: "/portal/ia-performance",
+    path: "/portal/attendance",
   },
   {
     title: "Proctoring (Mentorship Info)",

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import {
-  Calendar,
   BarChart3,
   Users,
   MessageSquare,
@@ -20,14 +19,9 @@ const portalFeatures = [
     path: "/portal/syllabus",
   },
   {
-    title: "Attendance",
-    icon: Calendar,
-    path: "/portal/attendance",
-  },
-  {
-    title: "IA Performance",
+    title: "IA Performance & Analytics",
     icon: BarChart3,
-    path: "/portal/ia-performance",
+    path: "/portal/attendance",
   },
   {
     title: "Proctoring",
