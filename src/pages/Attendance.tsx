@@ -207,11 +207,11 @@ const chartConfig = {
 
 const Attendance = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedSemester, setSelectedSemester] = useState("sem1");
+  const [selectedSemester, setSelectedSemester] = useState("sectionA");
   const [filterStatus, setFilterStatus] = useState("all");
   const [selectedPieSubject, setSelectedPieSubject] = useState("dbms");
 
-  const currentStudents = selectedSemester === "sem1" ? sem1Students : sem3Students;
+  const currentStudents = selectedSemester === "sectionA" ? sem1Students : sem3Students;
   
   const filteredStudents = currentStudents.filter((student) => {
     const matchesSearch = 
@@ -220,8 +220,8 @@ const Attendance = () => {
     
     if (filterStatus === "all") return matchesSearch;
     
-    // Calculate average attendance
-    const subjects = selectedSemester === "sem1" 
+    // Calculate average attendance and average IA marks
+    const subjects = selectedSemester === "sectionA" 
       ? ["dms", "dbms", "os"] 
       : ["psc", "dms", "dbms", "os"];
     
@@ -229,20 +229,32 @@ const Attendance = () => {
       .map((sub) => (student[sub as keyof typeof student] as { att?: number })?.att)
       .filter((a) => a !== undefined) as number[];
     
+    const marks = subjects
+      .map((sub) => (student[sub as keyof typeof student] as { marks?: number })?.marks)
+      .filter((m) => m !== undefined) as number[];
+    
     const avgAtt = attendances.length > 0 
       ? attendances.reduce((a, b) => a + b, 0) / attendances.length 
       : 0;
     
-    if (filterStatus === "excellent") return matchesSearch && avgAtt >= 85;
-    if (filterStatus === "good") return matchesSearch && avgAtt >= 75 && avgAtt < 85;
-    if (filterStatus === "low") return matchesSearch && avgAtt < 75;
+    // IA marks are out of 50, so calculate percentage
+    const avgMarksPercent = marks.length > 0 
+      ? (marks.reduce((a, b) => a + b, 0) / marks.length) * 2 
+      : 0;
+    
+    // Good Attendance & Poor Performance: >70% Attendance & < 50% of IA Marks
+    if (filterStatus === "goodAtt_poorPerf") return matchesSearch && avgAtt > 70 && avgMarksPercent < 50;
+    // Poor Attendance & Good Performance: < 50% Attendance & >= 60% of IA Marks
+    if (filterStatus === "poorAtt_goodPerf") return matchesSearch && avgAtt < 50 && avgMarksPercent >= 60;
+    // Poor Attendance & Poor Performance: < 50% Attendance & < 50% of IA Marks
+    if (filterStatus === "poorAtt_poorPerf") return matchesSearch && avgAtt < 50 && avgMarksPercent < 50;
     
     return matchesSearch;
   });
 
   // Summary stats
   const totalStudents = currentStudents.length;
-  const subjects = selectedSemester === "sem1" ? ["dms", "dbms", "os"] : ["psc", "dms", "dbms", "os"];
+  const subjects = selectedSemester === "sectionA" ? ["dms", "dbms", "os"] : ["psc", "dms", "dbms", "os"];
   
   const avgAttendance = Math.round(
     currentStudents.reduce((sum, student) => {
@@ -283,7 +295,7 @@ const Attendance = () => {
   const pieData = calculateAttendanceDistribution(currentStudents, selectedPieSubject);
 
   // Available subjects for pie chart based on semester
-  const pieSubjectOptions = selectedSemester === "sem1" 
+  const pieSubjectOptions = selectedSemester === "sectionA" 
     ? [
         { value: "dms", label: "DMS" },
         { value: "dbms", label: "DBMS" },
@@ -443,24 +455,24 @@ const Attendance = () => {
               <div className="flex flex-wrap gap-3">
                 <Select value={selectedSemester} onValueChange={setSelectedSemester}>
                   <SelectTrigger className="w-[140px]">
-                    <SelectValue placeholder="Semester" />
+                    <SelectValue placeholder="Section" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="sem1">1st Semester</SelectItem>
-                    <SelectItem value="sem3">3rd Semester</SelectItem>
+                    <SelectItem value="sectionA">Section A</SelectItem>
+                    <SelectItem value="sectionB">Section B</SelectItem>
                   </SelectContent>
                 </Select>
 
                 <Select value={filterStatus} onValueChange={setFilterStatus}>
-                  <SelectTrigger className="w-[140px]">
+                  <SelectTrigger className="w-[220px]">
                     <Filter className="h-4 w-4 mr-2" />
                     <SelectValue placeholder="Filter" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All Students</SelectItem>
-                    <SelectItem value="excellent">Excellent (85%+)</SelectItem>
-                    <SelectItem value="good">Good (75-84%)</SelectItem>
-                    <SelectItem value="low">Low (&lt;75%)</SelectItem>
+                    <SelectItem value="goodAtt_poorPerf">Good Att &amp; Poor Perf</SelectItem>
+                    <SelectItem value="poorAtt_goodPerf">Poor Att &amp; Good Perf</SelectItem>
+                    <SelectItem value="poorAtt_poorPerf">Poor Att &amp; Poor Perf</SelectItem>
                   </SelectContent>
                 </Select>
 
@@ -491,7 +503,7 @@ const Attendance = () => {
                         <TableHead className="w-[60px]">R.No</TableHead>
                         <TableHead>USN</TableHead>
                         <TableHead>Name</TableHead>
-                        {selectedSemester === "sem3" && (
+                        {selectedSemester === "sectionB" && (
                           <TableHead className="text-center">PSC</TableHead>
                         )}
                         <TableHead className="text-center">DMS</TableHead>
@@ -516,7 +528,7 @@ const Attendance = () => {
                             <TableCell className="font-medium">{student.rollNo}</TableCell>
                             <TableCell className="font-mono text-xs">{student.usn}</TableCell>
                             <TableCell className="font-medium">{student.name}</TableCell>
-                            {selectedSemester === "sem3" && (
+                            {selectedSemester === "sectionB" && (
                               <TableCell className="text-center">
                                 <div className="space-y-1">
                                   <Badge variant="outline" className={getMarksStatus((student as typeof sem3Students[0]).psc?.marks).color}>
