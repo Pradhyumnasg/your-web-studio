@@ -209,6 +209,7 @@ const Attendance = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedSemester, setSelectedSemester] = useState("sem1");
   const [filterStatus, setFilterStatus] = useState("all");
+  const [selectedPieSubject, setSelectedPieSubject] = useState("dbms");
 
   const currentStudents = selectedSemester === "sem1" ? sem1Students : sem3Students;
   
@@ -279,7 +280,21 @@ const Attendance = () => {
     };
   });
 
-  const pieData = calculateAttendanceDistribution(currentStudents, "dbms");
+  const pieData = calculateAttendanceDistribution(currentStudents, selectedPieSubject);
+
+  // Available subjects for pie chart based on semester
+  const pieSubjectOptions = selectedSemester === "sem1" 
+    ? [
+        { value: "dms", label: "DMS" },
+        { value: "dbms", label: "DBMS" },
+        { value: "os", label: "OS" },
+      ]
+    : [
+        { value: "psc", label: "PSC" },
+        { value: "dms", label: "DMS" },
+        { value: "dbms", label: "DBMS" },
+        { value: "os", label: "OS" },
+      ];
 
   return (
     <div className="min-h-screen hero-gradient">
@@ -377,10 +392,24 @@ const Attendance = () => {
 
           <Card className="bg-card/50 backdrop-blur-sm border-border/50">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5" />
-                Attendance Distribution (DBMS)
-              </CardTitle>
+              <div className="flex items-center justify-between">
+                <CardTitle className="flex items-center gap-2">
+                  <TrendingUp className="h-5 w-5" />
+                  Attendance Distribution
+                </CardTitle>
+                <Select value={selectedPieSubject} onValueChange={setSelectedPieSubject}>
+                  <SelectTrigger className="w-[120px]">
+                    <SelectValue placeholder="Subject" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {pieSubjectOptions.map((opt) => (
+                      <SelectItem key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </CardHeader>
             <CardContent>
               <ChartContainer config={chartConfig} className="h-[300px]">
