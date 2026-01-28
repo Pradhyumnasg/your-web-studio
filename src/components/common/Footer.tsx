@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="hero-gradient mt-auto text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-3">
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3">
@@ -23,6 +23,53 @@ const Footer = () => {
               Empowering future tech leaders with excellence in computer
               applications and innovation.
             </p>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h4 className="font-serif text-lg font-semibold">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  to="/"
+                  className="text-sm text-white/80 transition-colors hover:text-secondary"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about-mca"
+                  className="text-sm text-white/80 transition-colors hover:text-secondary"
+                >
+                  About MCA
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/faculty"
+                  className="text-sm text-white/80 transition-colors hover:text-secondary"
+                >
+                  Faculty
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/events"
+                  className="text-sm text-white/80 transition-colors hover:text-secondary"
+                >
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/research"
+                  className="text-sm text-white/80 transition-colors hover:text-secondary"
+                >
+                  Research
+                </Link>
+              </li>
+            </ul>
           </div>
 
           {/* Review Meeting Links */}
