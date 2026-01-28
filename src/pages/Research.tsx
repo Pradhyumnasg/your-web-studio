@@ -2,22 +2,25 @@ import { ExternalLink, FileText, BookOpen, Award } from "lucide-react";
 
 const recentPublications = [
   {
-    title: "Deep Learning Approaches for Natural Language Understanding",
-    authors: "Dr. John Smith, Dr. Sarah Johnson",
-    journal: "IEEE Transactions on AI",
+    title: "OPTIMIZING AI-DRIVEN CHESS BOTS: STRATEGIES FOR BALANCING PERFORMANCE, ACCURACY, AND COMPUTATIONAL EFFICIENCY",
+    authors: "Dr.GIRISH KUMAR D",
+    journal: "Conference",
     year: 2025,
+    link: "https://ieeexplore.ieee.org/abstract/document/11035271"
   },
   {
-    title: "Secure Cloud Architecture for Healthcare Applications",
-    authors: "Dr. Emily Davis, Prof. Robert Wilson",
-    journal: "ACM Computing Surveys",
+    title: "PERSONALIZED SURGICAL PLANNING WITH AI: A MACHINE LEARNING FRAMEWORK",
+    authors: "Dr. SDN HAYATH ALI",
+    journal: "Journal",
     year: 2025,
+    link: "https://www.researchgate.net/publication/390458625_Personalized_Surgical_Planning_with_AI_A_Machine_Learning_Framework"
   },
   {
-    title: "Edge Computing for Real-time IoT Analytics",
-    authors: "Dr. Lisa Anderson, Dr. John Smith",
-    journal: "Journal of Computer Science",
+    title: "TEMPORAL CONVOLUTIONAL NETWORK-BASED MEAN TEACHER SLEEP RECOGNITION FROM INTERNET OF EVERYTHING WEARABLES",
+    authors: "Dr.GIRISH KUMAR D",
+    journal: "Conference",
     year: 2024,
+    link: "#"
   },
 ];
 
@@ -46,9 +49,7 @@ const Research = () => {
                 <Award className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <span className="font-serif text-2xl font-bold text-primary">
-                  22+
-                </span>
+                <span className="font-serif text-2xl font-bold text-primary">2</span>
                 <p className="text-sm text-muted-foreground">Patents</p>
               </div>
             </div>
@@ -57,9 +58,7 @@ const Research = () => {
                 <FileText className="h-6 w-6 text-secondary" />
               </div>
               <div>
-                <span className="font-serif text-2xl font-bold text-primary">
-                  87+
-                </span>
+                <span className="font-serif text-2xl font-bold text-primary">40</span>
                 <p className="text-sm text-muted-foreground">Publications</p>
               </div>
             </div>
@@ -68,9 +67,7 @@ const Research = () => {
                 <BookOpen className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <span className="font-serif text-2xl font-bold text-primary">
-                  42+
-                </span>
+                <span className="font-serif text-2xl font-bold text-primary">30</span>
                 <p className="text-sm text-muted-foreground">Journals</p>
               </div>
             </div>
@@ -86,36 +83,37 @@ const Research = () => {
           </h2>
           <div className="mx-auto mt-12 max-w-3xl space-y-4">
             {recentPublications.map((pub, index) => (
-              <div
+              <a
                 key={index}
-                className="card-elevated group cursor-pointer rounded-xl bg-card p-6"
+                href={pub.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="font-serif text-lg font-semibold text-foreground group-hover:text-primary">
-                      {pub.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {pub.authors}
-                    </p>
-                    <p className="mt-2 text-sm">
-                      <span className="font-medium text-secondary">
-                        {pub.journal}
-                      </span>
-                      <span className="text-muted-foreground"> • {pub.year}</span>
-                    </p>
+                <div className="card-elevated group cursor-pointer rounded-xl bg-card p-6 transition-all hover:shadow-lg">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="font-serif text-lg font-semibold text-foreground group-hover:text-primary">
+                        {pub.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {pub.authors}
+                      </p>
+                      <p className="mt-2 text-sm">
+                        <span className="font-medium text-secondary">
+                          {pub.journal}
+                        </span>
+                        <span className="text-muted-foreground"> • {pub.year}</span>
+                      </p>
+                    </div>
+                    <ExternalLink className="h-5 w-5 flex-shrink-0 text-muted-foreground group-hover:text-primary" />
                   </div>
-                  <ExternalLink className="h-5 w-5 flex-shrink-0 text-muted-foreground group-hover:text-primary" />
                 </div>
-              </div>
+              </a>
             ))}
-          </div>
-          <div className="mt-8 text-center">
-            <button className="btn-secondary">View All Publications</button>
           </div>
         </div>
       </section>
-
     </div>
   );
 };
