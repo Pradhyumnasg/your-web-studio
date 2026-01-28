@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, BarChart3, Users, FileText, BookOpen, MessageSquare } from "lucide-react";
 import logo from "@/assets/bitm-logo.png";
+import tehrdLogo from "@/assets/tehrd-trust-logo.png";
+import vtuLogo from "@/assets/vtu-logo.png";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -27,11 +29,21 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl backdrop-saturate-150 transition-all duration-300">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between md:h-20">
-          {/* Logo */}
+          {/* Logos Section */}
           <Link to="/" className="group flex items-center gap-3 transition-transform duration-300 hover:scale-[1.02]">
+            <img 
+              src={vtuLogo} 
+              alt="VTU - Visvesvaraya Technological University" 
+              className="h-12 w-auto md:h-14"
+            />
             <img 
               src={logo} 
               alt="BITM - Ballari Institute of Technology & Management" 
+              className="h-12 w-auto md:h-14"
+            />
+            <img 
+              src={tehrdLogo} 
+              alt="T.E.H.R.D Trust" 
               className="h-12 w-auto md:h-14"
             />
           </Link>
