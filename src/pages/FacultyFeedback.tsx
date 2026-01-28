@@ -36,14 +36,14 @@ const feedbackData: FeedbackEntry[] = [
   { slNo: 6, subjectCode: "MMCL106", subject: "DBMS Lab", faculty: "Subhashree D. C.", scores: [94.69, 92.50, 88.13, 91.25, 93.44, 92.19, 90.63, 90.63, 93.75, null], gradePointAvg: 91.91, section: "A" },
   { slNo: 7, subjectCode: "MRMI107", subject: "RM & IPR", faculty: "Prakash O S", scores: [93.23, 91.29, 90.97, 91.61, 92.90, 88.06, 90.00, 91.29, 92.26, 92.90], gradePointAvg: 91.45, section: "A" },
   
-  // Section B - Placeholder (to be updated when Section B screenshots are provided)
-  { slNo: 1, subjectCode: "MMC101", subject: "PSC", faculty: "SDN Hayath Ali", scores: [null, null, null, null, null, null, null, null, null, null], gradePointAvg: 0, section: "B" },
-  { slNo: 2, subjectCode: "MMC102", subject: "DMS", faculty: "Mr. Swamy J S T", scores: [null, null, null, null, null, null, null, null, null, null], gradePointAvg: 0, section: "B" },
-  { slNo: 3, subjectCode: "MMC103", subject: "DBMS", faculty: "Sharvani Channappa", scores: [null, null, null, null, null, null, null, null, null, null], gradePointAvg: 0, section: "B" },
-  { slNo: 4, subjectCode: "MMC104", subject: "OS", faculty: "Jennifer S", scores: [null, null, null, null, null, null, null, null, null, null], gradePointAvg: 0, section: "B" },
-  { slNo: 5, subjectCode: "MMC105", subject: "WT", faculty: "Sree Lakshmi", scores: [null, null, null, null, null, null, null, null, null, null], gradePointAvg: 0, section: "B" },
-  { slNo: 6, subjectCode: "MMCL106", subject: "DBMS Lab", faculty: "Subhashree D. C.", scores: [null, null, null, null, null, null, null, null, null, null], gradePointAvg: 0, section: "B" },
-  { slNo: 7, subjectCode: "MRMI107", subject: "RM & IPR", faculty: "Dr. Girish Kumar D", scores: [null, null, null, null, null, null, null, null, null, null], gradePointAvg: 0, section: "B" },
+  // Section B - Original data
+  { slNo: 1, subjectCode: "MMC101", subject: "PSC", faculty: "SDN Hayath Ali", scores: [96.10, 93.50, 92.60, 91.30, 96.50, 91.60, 92.60, 93.20, 93.20, 94.80], gradePointAvg: 93.54, section: "B" },
+  { slNo: 2, subjectCode: "MMC102", subject: "DMS", faculty: "Mr. Swamy J S T", scores: [98.40, 93.20, 94.50, 96.80, 96.80, 93.90, 95.80, 93.90, 93.50, 95.50], gradePointAvg: 95.23, section: "B" },
+  { slNo: 3, subjectCode: "MMC103", subject: "DBMS", faculty: "Sharvani Channappa", scores: [94.50, 93.20, 89.70, 91.60, 92.90, 90.00, 89.40, 90.00, 94.20, 94.80], gradePointAvg: 92.03, section: "B" },
+  { slNo: 4, subjectCode: "MMC104", subject: "OS", faculty: "Jennifer S", scores: [96.10, 95.50, 94.80, 94.80, 96.10, 92.30, 93.90, 93.90, 94.80, 93.20], gradePointAvg: 94.54, section: "B" },
+  { slNo: 5, subjectCode: "MMC105", subject: "WT", faculty: "Sree Lakshmi", scores: [91.60, 92.90, 88.70, 91.60, 89.70, 89.40, 89.40, 86.50, 92.60, 91.30], gradePointAvg: 90.34, section: "B" },
+  { slNo: 6, subjectCode: "MMCL106", subject: "DBMS Lab", faculty: "Subhashree D. C.", scores: [94.30, 92.70, 91.30, 91.70, 90.70, 90.70, 92.30, 92.30, 93.70, null], gradePointAvg: 92.19, section: "B" },
+  { slNo: 7, subjectCode: "MRMI107", subject: "RM & IPR", faculty: "Dr. Girish Kumar D", scores: [89.00, 91.70, 92.10, 93.40, 93.80, 92.10, 94.10, 91.40, 94.10, 94.50], gradePointAvg: 92.62, section: "B" },
 ];
 
 const subjects = ["All", "PSC", "DMS", "DBMS", "OS", "WT", "RM & IPR"];
