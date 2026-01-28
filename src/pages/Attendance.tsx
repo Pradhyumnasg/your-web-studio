@@ -282,22 +282,23 @@ const Attendance = () => {
     return avg >= 85;
   }).length;
 
-  // Bar chart data for subject-wise average attendance
+  // Bar chart data for subject-wise average marks
+  const subjectLabels: Record<string, string> = {
+    psc: "PSC",
+    dms: "DMS",
+    dbms: "DBMS",
+    os: "OS",
+    wt: "WT",
+    rmIpr: "RM & IPR",
+  };
+  
   const subjectAvgData = subjects.map((sub) => {
-    const atts = currentStudents
-      .map((s) => (s[sub as keyof typeof s] as { att?: number })?.att)
-      .filter((a) => a !== undefined) as number[];
-    const subjectLabels: Record<string, string> = {
-      psc: "PSC",
-      dms: "DMS",
-      dbms: "DBMS",
-      os: "OS",
-      wt: "WT",
-      rmIpr: "RM & IPR",
-    };
+    const marks = currentStudents
+      .map((s) => (s[sub as keyof typeof s] as { marks?: number | null })?.marks)
+      .filter((m) => m !== undefined && m !== null) as number[];
     return {
       subject: subjectLabels[sub] || sub.toUpperCase(),
-      attendance: atts.length > 0 ? Math.round(atts.reduce((a, b) => a + b, 0) / atts.length) : 0,
+      marks: marks.length > 0 ? Math.round(marks.reduce((a, b) => a + b, 0) / marks.length) : 0,
     };
   });
 
@@ -391,7 +392,7 @@ const Attendance = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpen className="h-5 w-5" />
-                Subject-wise Average Attendance
+                Subject-wise Average Marks (out of 50)
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -399,9 +400,9 @@ const Attendance = () => {
                 <BarChart data={subjectAvgData}>
                   <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
                   <XAxis dataKey="subject" className="text-xs" />
-                  <YAxis domain={[0, 100]} className="text-xs" />
+                  <YAxis domain={[0, 50]} className="text-xs" />
                   <ChartTooltip content={<ChartTooltipContent />} />
-                  <Bar dataKey="attendance" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="marks" fill="hsl(var(--secondary))" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ChartContainer>
             </CardContent>
