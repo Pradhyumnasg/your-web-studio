@@ -47,15 +47,15 @@ const feedbackData: FeedbackEntry[] = [
 ];
 
 const subjects = ["All", "PSC", "DMS", "DBMS", "OS", "WT", "RM & IPR"];
-const sections = ["All", "A", "B"];
+const sections: ("A" | "B")[] = ["A", "B"];
 
 const FacultyFeedback = () => {
   const [selectedSubject, setSelectedSubject] = useState("All");
-  const [selectedSection, setSelectedSection] = useState("All");
+  const [selectedSection, setSelectedSection] = useState<"A" | "B">("A");
 
   const filteredData = feedbackData.filter((entry) => {
     const subjectMatch = selectedSubject === "All" || entry.subject === selectedSubject;
-    const sectionMatch = selectedSection === "All" || entry.section === selectedSection;
+    const sectionMatch = entry.section === selectedSection;
     return subjectMatch && sectionMatch;
   });
 
@@ -106,14 +106,14 @@ const FacultyFeedback = () => {
 
             <div className="flex items-center gap-2">
               <span className="text-sm font-medium text-muted-foreground">Section:</span>
-              <Select value={selectedSection} onValueChange={setSelectedSection}>
-                <SelectTrigger className="w-[100px]">
+              <Select value={selectedSection} onValueChange={(val) => setSelectedSection(val as "A" | "B")}>
+                <SelectTrigger className="w-[120px]">
                   <SelectValue placeholder="Select Section" />
                 </SelectTrigger>
                 <SelectContent>
                   {sections.map((section) => (
                     <SelectItem key={section} value={section}>
-                      {section === "All" ? "All" : `Section ${section}`}
+                      Section {section}
                     </SelectItem>
                   ))}
                 </SelectContent>
