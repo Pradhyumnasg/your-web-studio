@@ -8,6 +8,7 @@ import {
   Award,
   Target,
 } from "lucide-react";
+import HeroBadge from "@/components/common/HeroBadge";
 
 const portalFeatures = [
   {
@@ -53,6 +54,7 @@ const Portal = () => {
       {/* Hero Section */}
       <section className="hero-gradient py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
+          <HeroBadge />
           <h1 className="font-serif text-4xl font-bold text-primary-foreground md:text-5xl">
             Review Meeting
           </h1>

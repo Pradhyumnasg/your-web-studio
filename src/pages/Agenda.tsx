@@ -1,5 +1,6 @@
 import { BookOpen, BarChart3, Users, MessageSquare, Award, Target, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import HeroBadge from "@/components/common/HeroBadge";
 
 const quickLinks = [
   {
@@ -46,8 +47,9 @@ const Agenda = () => {
   return (
     <div className="min-h-screen hero-gradient">
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <HeroBadge />
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-left">
             Agenda
           </h1>
           
