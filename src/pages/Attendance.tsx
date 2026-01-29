@@ -323,12 +323,12 @@ const Attendance = () => {
       ? (marks.reduce((a, b) => a + b, 0) / marks.length) * 2 
       : 0;
     
-    // Good Attendance & Poor Performance: >70% Attendance & < 50% of IA Marks
-    if (filterStatus === "goodAtt_poorPerf") return matchesSearch && avgAtt > 70 && avgMarksPercent < 50;
-    // Poor Attendance & Good Performance: < 50% Attendance & >= 60% of IA Marks
-    if (filterStatus === "poorAtt_goodPerf") return matchesSearch && avgAtt < 50 && avgMarksPercent >= 60;
-    // Poor Attendance & Poor Performance: < 50% Attendance & < 50% of IA Marks
-    if (filterStatus === "poorAtt_poorPerf") return matchesSearch && avgAtt < 50 && avgMarksPercent < 50;
+    // Good Attendance & Poor Performance: >=75% Attendance & < 50% of IA Marks
+    if (filterStatus === "goodAtt_poorPerf") return matchesSearch && avgAtt >= 75 && avgMarksPercent < 50;
+    // Poor Attendance & Good Performance: < 75% Attendance & >= 60% of IA Marks (Low/Poor attendance with Good marks)
+    if (filterStatus === "poorAtt_goodPerf") return matchesSearch && avgAtt < 75 && avgMarksPercent >= 60;
+    // Poor Attendance & Poor Performance: < 75% Attendance & < 50% of IA Marks (Low/Poor attendance with Low marks)
+    if (filterStatus === "poorAtt_poorPerf") return matchesSearch && avgAtt < 75 && avgMarksPercent < 50;
     
     return matchesSearch;
   });

@@ -19,7 +19,7 @@ const facultyData = [
   {
     name: "Dr. Girish Kumar D",
     designation: "Professor & HOD",
-    teachingExp: "13 Years",
+    teachingExp: "18 Years",
     email: "girishkumar@bitm.edu.in",
     image: girishKumarImg,
   },
