@@ -38,7 +38,7 @@ const Roadmap = () => {
         <div className="container mx-auto px-4 text-center">
           <HeroBadge />
           <h1 className="animate-fade-in font-serif text-4xl font-bold text-white md:text-5xl">
-            Department Road Map
+            Department Roadmap
           </h1>
           <p className="mx-auto mt-4 max-w-2xl animate-slide-up text-white/80">
             Annual Targets & Achievements - Jan - Dec 2026
@@ -138,8 +138,11 @@ const Roadmap = () => {
                           </TableCell>
                           <TableCell>
                             <div className="flex items-center gap-2">
-                              <Progress value={progress} className="h-2 flex-1" />
-                              <span className="text-sm text-muted-foreground w-12">{progress}%</span>
+                              <Progress 
+                                value={progress} 
+                                className={`h-2 flex-1 ${progress > 0 ? "[&>div]:bg-green-500" : ""}`} 
+                              />
+                              <span className={`text-sm w-12 ${progress > 0 ? "text-green-600 font-medium" : "text-muted-foreground"}`}>{progress}%</span>
                             </div>
                           </TableCell>
                         </TableRow>
