@@ -20,11 +20,6 @@ const Index = () => {
         
         <div className="container relative mx-auto px-4 py-20 md:py-32">
           <div className="mx-auto max-w-4xl text-center">
-            {/* Badge */}
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary backdrop-blur-sm animate-fade-in">
-              <Zap className="h-4 w-4" />
-              <span>Excellence in Technology Education</span>
-            </div>
             
             <h1 className="animate-fade-in font-serif text-3xl font-bold text-white md:text-5xl lg:text-6xl leading-tight mb-2">
               Ballari Institute of Technology & Management
