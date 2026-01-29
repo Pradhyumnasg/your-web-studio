@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, BarChart3, Users, FileText, BookOpen, MessageSquare, Award, Target } from "lucide-react";
 import logo from "@/assets/bitm-logo.png";
+import mcaLogo from "@/assets/mca-logo.png";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -33,6 +34,11 @@ const Navbar = () => {
               src={logo} 
               alt="BITM - Ballari Institute of Technology & Management" 
               className="h-12 w-auto md:h-14 rounded-[50%]"
+            />
+            <img 
+              src={mcaLogo} 
+              alt="MCA Department Logo" 
+              className="h-10 w-auto md:h-12"
             />
           </Link>
 

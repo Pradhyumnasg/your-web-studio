@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FileText, BookOpen, BarChart3, Users, MessageSquare, Award, Target } from "lucide-react";
 import logo from "@/assets/bitm-logo.png";
+import mcaLogo from "@/assets/mca-logo.png";
 
 const Footer = () => {
   return (
@@ -15,9 +16,11 @@ const Footer = () => {
                 alt="BITM - Ballari Institute of Technology & Management" 
                 className="h-12 w-auto rounded-[50%]"
               />
-              <span className="font-serif text-xl font-bold">
-                MCA Department
-              </span>
+              <img 
+                src={mcaLogo} 
+                alt="MCA Department Logo" 
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-sm text-white/80">
               Empowering future tech leaders with excellence in computer
