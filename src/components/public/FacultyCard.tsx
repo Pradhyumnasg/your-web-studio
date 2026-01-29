@@ -6,6 +6,7 @@ interface FacultyCardProps {
   teachingExp?: string;
   email?: string;
   image?: string;
+  imageScale?: string;
 }
 
 const FacultyCard = ({
@@ -14,6 +15,7 @@ const FacultyCard = ({
   teachingExp,
   email,
   image,
+  imageScale = "scale-100",
 }: FacultyCardProps) => {
   return (
     <div className="card-elevated group overflow-hidden rounded-xl bg-card">
@@ -22,7 +24,7 @@ const FacultyCard = ({
           <img
             src={image}
             alt={name}
-            className="h-full w-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
+            className={`h-full w-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105 ${imageScale}`}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
