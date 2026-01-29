@@ -13,7 +13,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="BITM - Ballari Institute of Technology & Management" 
-                className="h-12 w-auto"
+                className="h-12 w-auto rounded-[50%]"
               />
               <span className="font-serif text-xl font-bold">
                 MCA Department
