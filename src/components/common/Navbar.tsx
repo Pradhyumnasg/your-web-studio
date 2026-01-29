@@ -38,7 +38,7 @@ const Navbar = () => {
             <img 
               src={mcaLogo} 
               alt="MCA Department Logo" 
-              className="h-10 w-auto md:h-12"
+              className="h-12 w-auto md:h-14"
             />
           </Link>
 

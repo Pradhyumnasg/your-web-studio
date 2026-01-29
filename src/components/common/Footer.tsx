@@ -19,7 +19,7 @@ const Footer = () => {
               <img 
                 src={mcaLogo} 
                 alt="MCA Department Logo" 
-                className="h-10 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
             <p className="text-sm text-white/80">
