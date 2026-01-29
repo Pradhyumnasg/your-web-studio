@@ -57,37 +57,6 @@ const ThirdSemResult = () => {
         </div>
       </section>
 
-      {/* Stats Cards */}
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="grid sm:grid-cols-3 gap-4 mb-8">
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-muted-foreground">Total Appeared</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold text-foreground">{totalAppeared}</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-muted-foreground">Total Passed</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold text-green-600">{totalPassed}</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-muted-foreground">Total Failed</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold text-red-500">{totalFailed}</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Table Section */}
       <section className="pb-16">

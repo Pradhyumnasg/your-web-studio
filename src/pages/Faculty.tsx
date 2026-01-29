@@ -71,7 +71,6 @@ const facultyData = [
     teachingExp: "0-1 Year",
     email: "sreelakshmi.j@bitm.edu.in",
     image: sreelakshmiImg,
-    imageScale: "scale-75",
   },
   {
     name: "Mr. Pradhyumn SG",
