@@ -8,7 +8,7 @@ interface HeroBadgeProps {
 const HeroBadge = ({ size = "sm", sticky = true }: HeroBadgeProps) => {
   if (sticky) {
     return (
-      <div className="sticky top-16 z-40 w-full flex justify-center py-3 bg-primary/95 backdrop-blur-sm border-b border-white/10">
+      <div className="sticky top-16 z-40 w-full flex justify-center py-3 hero-gradient backdrop-blur-sm border-b border-white/10">
         <div 
           className={`inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1.5 font-medium text-secondary animate-fade-in ${
             size === "sm" ? "text-xs" : "text-sm"
