@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, BarChart3, Users, FileText, BookOpen, MessageSquare } from "lucide-react";
+import { Menu, X, ChevronDown, BarChart3, Users, FileText, BookOpen, MessageSquare, Award, Target } from "lucide-react";
 import logo from "@/assets/bitm-logo.png";
 import { Button } from "@/components/ui/button";
 import {
@@ -66,9 +66,15 @@ const Navbar = () => {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/portal/syllabus" className="flex items-center gap-2 cursor-pointer">
+                  <Link to="/portal/3rd-sem-result" className="flex items-center gap-2 cursor-pointer">
+                    <Award className="h-4 w-4" />
+                    3rd Sem Result Feedback
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/portal/syllabus-coverage" className="flex items-center gap-2 cursor-pointer">
                     <BookOpen className="h-4 w-4" />
-                    Syllabus
+                    Syllabus Coverage
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
@@ -87,6 +93,12 @@ const Navbar = () => {
                   <Link to="/portal/faculty-feedback" className="flex items-center gap-2 cursor-pointer">
                     <MessageSquare className="h-4 w-4" />
                     Faculty Feedback
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/portal/roadmap" className="flex items-center gap-2 cursor-pointer">
+                    <Target className="h-4 w-4" />
+                    Roadmap
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -137,12 +149,20 @@ const Navbar = () => {
                   Agenda
                 </Link>
                 <Link
-                  to="/portal/syllabus"
+                  to="/portal/3rd-sem-result"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-foreground/80 hover:bg-muted"
+                >
+                  <Award className="h-4 w-4" />
+                  3rd Sem Result Feedback
+                </Link>
+                <Link
+                  to="/portal/syllabus-coverage"
                   onClick={() => setIsOpen(false)}
                   className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-foreground/80 hover:bg-muted"
                 >
                   <BookOpen className="h-4 w-4" />
-                  Syllabus
+                  Syllabus Coverage
                 </Link>
                 <Link
                   to="/portal/attendance"
@@ -167,6 +187,14 @@ const Navbar = () => {
                 >
                   <MessageSquare className="h-4 w-4" />
                   Faculty Feedback
+                </Link>
+                <Link
+                  to="/portal/roadmap"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-foreground/80 hover:bg-muted"
+                >
+                  <Target className="h-4 w-4" />
+                  Roadmap
                 </Link>
               </div>
             </div>

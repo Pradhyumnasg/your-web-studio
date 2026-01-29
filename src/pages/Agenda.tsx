@@ -1,11 +1,16 @@
-import { BookOpen, BarChart3, Users, MessageSquare } from "lucide-react";
+import { BookOpen, BarChart3, Users, MessageSquare, Award, Target, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
   {
-    title: "Syllabus",
+    title: "3rd Sem Result Feedback",
+    icon: Award,
+    path: "/portal/3rd-sem-result",
+  },
+  {
+    title: "Syllabus Coverage",
     icon: BookOpen,
-    path: "/portal/syllabus",
+    path: "/portal/syllabus-coverage",
   },
   {
     title: "IA Performance & Analytics",
@@ -22,6 +27,19 @@ const quickLinks = [
     icon: MessageSquare,
     path: "/portal/faculty-feedback",
   },
+  {
+    title: "Roadmap",
+    icon: Target,
+    path: "/portal/roadmap",
+  },
+];
+
+const agendaPoints = [
+  "Provides a structured roadmap for the academic journey, aligning students and faculty with goals and timelines",
+  "Clearly outlines key sessions, milestones, assessments, and activities for transparency from the start",
+  "Integrates with the syllabus, attendance tracking, performance analytics, and mentorship support",
+  "Helps learners plan effectively, stay on track, and engage meaningfully with their progress",
+  "Serves as a centralized platform for managing coursework, evaluations, and feedback",
 ];
 
 const Agenda = () => {
@@ -33,14 +51,15 @@ const Agenda = () => {
             Agenda
           </h1>
           
-          <p className="text-lg text-white/90 leading-relaxed mb-12">
-            The agenda provides a structured roadmap of the academic journey, helping
-            students and faculty stay aligned with learning goals and timelines. It outlines key
-            sessions, milestones, assessments, and activities planned throughout the
-            course, ensuring transparency and clarity from the start. By integrating seamlessly with the syllabus, attendance tracking, performance analytics, and mentorship support, The agenda enables learners to plan effectively, stay on track,
-            and engage meaningfully with their academic progress. Designed to support
-            consistency and accountability, it serves as a central reference point for managing coursework, evaluations, and feedback in one unified platform.
-          </p>
+          {/* Agenda Points */}
+          <div className="mb-12 space-y-4">
+            {agendaPoints.map((point, index) => (
+              <div key={index} className="flex items-start gap-3 text-white/90">
+                <CheckCircle className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
+                <p className="text-lg leading-relaxed">{point}</p>
+              </div>
+            ))}
+          </div>
 
           {/* Quick Links Grid */}
           <div className="grid sm:grid-cols-2 gap-4">
