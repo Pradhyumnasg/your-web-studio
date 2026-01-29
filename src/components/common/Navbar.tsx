@@ -32,7 +32,7 @@ const Navbar = () => {
             <img 
               src={logo} 
               alt="BITM - Ballari Institute of Technology & Management" 
-              className="h-12 w-auto md:h-14"
+              className="h-12 w-auto md:h-14 rounded-[50%]"
             />
           </Link>
 

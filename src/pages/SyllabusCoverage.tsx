@@ -19,6 +19,7 @@ import {
   ResponsiveContainer,
   PolarAngleAxis,
 } from "recharts";
+import HeroBadge from "@/components/common/HeroBadge";
 
 const sectionAData = [
   { subject: "PSC", coverage: 66, fill: "hsl(142, 71%, 45%)" },
@@ -59,6 +60,7 @@ const SyllabusCoverage = () => {
       {/* Hero Section */}
       <section className="hero-gradient relative py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
+          <HeroBadge />
           <h1 className="animate-fade-in font-serif text-4xl font-bold text-white md:text-5xl">
             Syllabus Coverage
           </h1>

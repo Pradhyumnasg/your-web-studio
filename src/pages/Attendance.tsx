@@ -8,6 +8,7 @@ import {
   Search,
   Filter,
 } from "lucide-react";
+import HeroBadge from "@/components/common/HeroBadge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
@@ -177,27 +178,34 @@ const getMarksStatus = (marks: number | null | undefined) => {
   return { label: "Fail", color: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200" };
 };
 
-// Proctor mapping based on USN
+// Proctor mapping based on USN - synced with Proctoring.tsx
 const getProctorForStudent = (usn: string, section: string): string => {
-  // Section A Proctors
-  const sectionAProctor1 = ["22BI25MCA081-T", "22BI25MCA007-T", "22BI25MCA016-T", "22BI25MCA075-T", "22BI25MCA065-T", "22BI25MCA013-T", "22BI25MCA071-T", "22BI25MCA049-T", "22BI25MCA060-T", "22BI25MCA094-T", "22BI25MCA029-T", "22BI25MCA036-T", "22BI25MCA040-T", "22BI25MCA078-T", "22BI25MCA046-T", "22BI25MCA101-T"];
-  const sectionAProctor2 = ["22BI25MCA042-T", "22BI25MCA093-T", "22BI25MCA100-T", "22BI25MCA011-T", "22BI25MCA018-T", "22BI25MCA105-T", "22BI25MCA102-T", "22BI25MCA059-T", "22BI25MCA008-T", "22BI25MCA064-T", "22BI25MCA074-T", "22BI25MCA019-T", "22BI25MCA048-T", "22BI25MCA097-T", "22BI25MCA038-T", "22BI25MCA084-T", "22BI25MCA021-T", "22BI25MCA037-T", "22BI25MCA043-T", "22BI25MCA054-T", "22BI25MCA047-T", "22BI25MCA067-T", "22BI25MCA083-T", "22BI25MCA104-T", "22BI25MCA077-T", "22BI25MCA026-T", "22BI25MCA090-T", "22BI25MCA082-T", "22BI25MCA027-T", "22BI25MCA035-T", "22BI25MCA056-T"];
+  // Section A Proctors (from Proctoring.tsx)
+  // Prakash Sarangamath: Roll 1-16
+  const prakashStudents = ["22BI25MCA081-T", "22BI25MCA007-T", "22BI25MCA016-T", "22BI25MCA075-T", "22BI25MCA065-T", "22BI25MCA013-T", "22BI25MCA071-T", "22BI25MCA049-T", "22BI25MCA060-T", "22BI25MCA094-T", "22BI25MCA029-T", "22BI25MCA036-T", "22BI25MCA040-T", "22BI25MCA078-T", "22BI25MCA046-T", "22BI25MCA101-T"];
+  // Subhashree S: Roll 17-47
+  const subhashreeStudents = ["22BI25MCA042-T", "22BI25MCA093-T", "22BI25MCA100-T", "22BI25MCA011-T", "22BI25MCA018-T", "22BI25MCA105-T", "22BI25MCA102-T", "22BI25MCA059-T", "22BI25MCA008-T", "22BI25MCA064-T", "22BI25MCA074-T", "22BI25MCA019-T", "22BI25MCA048-T", "22BI25MCA097-T", "22BI25MCA038-T", "22BI25MCA084-T", "22BI25MCA021-T", "22BI25MCA037-T", "22BI25MCA043-T", "22BI25MCA054-T", "22BI25MCA047-T", "22BI25MCA067-T", "22BI25MCA083-T", "22BI25MCA104-T", "22BI25MCA077-T", "22BI25MCA026-T", "22BI25MCA090-T", "22BI25MCA082-T", "22BI25MCA027-T", "22BI25MCA035-T", "22BI25MCA056-T"];
   
-  // Section B Proctors
-  const sectionBProctor1 = ["22BI25MCA091-T", "22BI25MCA063-T", "22BI25MCA070-T", "22BI25MCA085-T", "22BI25MCA017-T", "22BI25MCA087-T", "22BI25MCA103-T", "22BI25MCA014-T", "22BI25MCA001-T", "22BI25MCA072-T", "22BI25MCA024-T", "22BI25MCA062-T", "22BI25MCA055-T", "22BI25MCA069-T", "22BI25MCA053-T", "22BI25MCA044-T"];
-  const sectionBProctor2 = ["22BI25MCA009-T", "22BI25MCA050-T", "22BI25MCA004-T", "22BI25MCA052-T", "22BI25MCA099-T", "22BI25MCA025-T", "22BI25MCA086-T", "22BI25MCA045-T", "22BI25MCA030-T", "22BI25MCA089-T", "22BI25MCA096-T", "22BI25MCA092-T", "22BI25MCA066-T", "22BI25MCA028-T", "22BI25MCA033-T", "22BI25MCA076-T"];
-  const sectionBProctor3 = ["22BI25MCA061-T", "22BI25MCA068-T", "22BI25MCA023-T", "22BI25MCA088-T", "22BI25MCA032-T", "22BI25MCA095-T", "22BI25MCA079-T", "22BI25MCA041-T", "22BI25MCA034-T", "22BI25MCA051-T", "22BI25MCA080-T", "22BI25MCA039-T", "22BI25MCA006-T", "22BI25MCA106-T", "22BI25MCA107-T", "22BI25MCA110-T"];
-  const sectionBProctor4 = ["22BI25MCA002-T", "22BI25MCA010-T", "22BI25MCA022-T", "22BI25MCA057-T", "22BI25MCA098-T", "22BI25MCA073-T", "22BI25MCA020-T", "22BI25MCA015-T", "22BI25MCA031-T", "22BI25MCA058-T", "22BI25MCA005-T", "22BI25MCA108-T", "22BI25MCA109-T"];
+  // Section B Proctors (from Proctoring.tsx)
+  // Jennifer Mary S: Roll 48-63
+  const jenniferStudents = ["22BI25MCA091-T", "22BI25MCA063-T", "22BI25MCA070-T", "22BI25MCA085-T", "22BI25MCA017-T", "22BI25MCA087-T", "22BI25MCA103-T", "22BI25MCA014-T", "22BI25MCA001-T", "22BI25MCA072-T", "22BI25MCA024-T", "22BI25MCA062-T", "22BI25MCA055-T", "22BI25MCA069-T", "22BI25MCA053-T", "22BI25MCA044-T"];
+  // Sharvani: Roll 64-79
+  const sharvaniStudents = ["22BI25MCA009-T", "22BI25MCA050-T", "22BI25MCA004-T", "22BI25MCA052-T", "22BI25MCA099-T", "22BI25MCA025-T", "22BI25MCA086-T", "22BI25MCA045-T", "22BI25MCA030-T", "22BI25MCA089-T", "22BI25MCA096-T", "22BI25MCA092-T", "22BI25MCA066-T", "22BI25MCA028-T", "22BI25MCA033-T", "22BI25MCA076-T"];
+  // Sreelakshmi Joshi: Roll 80-95
+  const sreelakshmiStudents = ["22BI25MCA061-T", "22BI25MCA068-T", "22BI25MCA023-T", "22BI25MCA088-T", "22BI25MCA032-T", "22BI25MCA095-T", "22BI25MCA079-T", "22BI25MCA041-T", "22BI25MCA034-T", "22BI25MCA051-T", "22BI25MCA080-T", "22BI25MCA039-T", "22BI25MCA006-T", "22BI25MCA106-T", "22BI25MCA107-T", "22BI25MCA110-T"];
+  // Hayath Ali: Low attendance / special cases
+  const hayathStudents = ["22BI25MCA002-T", "22BI25MCA010-T", "22BI25MCA022-T", "22BI25MCA057-T", "22BI25MCA098-T", "22BI25MCA073-T", "22BI25MCA020-T", "22BI25MCA015-T", "22BI25MCA031-T", "22BI25MCA058-T", "22BI25MCA005-T", "22BI25MCA108-T", "22BI25MCA109-T"];
 
-  if (section === "sectionA") {
-    if (sectionAProctor1.includes(usn)) return "Prakash S";
-    if (sectionAProctor2.includes(usn)) return "Subhashree S";
-  } else {
-    if (sectionBProctor1.includes(usn)) return "Jennifer Mary S";
-    if (sectionBProctor2.includes(usn)) return "Sharvani";
-    if (sectionBProctor3.includes(usn)) return "Sreelakshmi J";
-    if (sectionBProctor4.includes(usn)) return "Hayath Ali";
-  }
+  // Check Section A proctors
+  if (prakashStudents.includes(usn)) return "Prakash S";
+  if (subhashreeStudents.includes(usn)) return "Subhashree S";
+  
+  // Check Section B proctors
+  if (jenniferStudents.includes(usn)) return "Jennifer Mary S";
+  if (sharvaniStudents.includes(usn)) return "Sharvani";
+  if (sreelakshmiStudents.includes(usn)) return "Sreelakshmi J";
+  if (hayathStudents.includes(usn)) return "Hayath Ali";
+  
   return "-";
 };
 
@@ -351,11 +359,12 @@ const Attendance = () => {
     <div className="min-h-screen hero-gradient">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+        <div className="mb-8 text-center">
+          <HeroBadge />
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
             IA Performance & Analytics
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-white/80">
             1st Internal Marks & Attendance Report - Academic Year 2025-26
           </p>
         </div>
