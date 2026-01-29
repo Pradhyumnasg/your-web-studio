@@ -5,6 +5,8 @@ import {
   MessageSquare,
   FileText,
   BookOpen,
+  Award,
+  Target,
 } from "lucide-react";
 
 const portalFeatures = [
@@ -14,9 +16,14 @@ const portalFeatures = [
     path: "/portal/agenda",
   },
   {
-    title: "Syllabus",
+    title: "3rd Sem Result Feedback",
+    icon: Award,
+    path: "/portal/3rd-sem-result",
+  },
+  {
+    title: "Syllabus Coverage",
     icon: BookOpen,
-    path: "/portal/syllabus",
+    path: "/portal/syllabus-coverage",
   },
   {
     title: "IA Performance & Analytics",
@@ -32,6 +39,11 @@ const portalFeatures = [
     title: "Feedback",
     icon: MessageSquare,
     path: "/portal/faculty-feedback",
+  },
+  {
+    title: "Roadmap",
+    icon: Target,
+    path: "/portal/roadmap",
   },
 ];
 

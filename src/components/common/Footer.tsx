@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FileText, BookOpen, BarChart3, Users, MessageSquare } from "lucide-react";
+import { FileText, BookOpen, BarChart3, Users, MessageSquare, Award, Target } from "lucide-react";
 import logo from "@/assets/bitm-logo.png";
 
 const Footer = () => {
@@ -87,11 +87,20 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/portal/syllabus"
+                  to="/portal/3rd-sem-result"
+                  className="flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-secondary"
+                >
+                  <Award className="h-4 w-4" />
+                  3rd Sem Result Feedback
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/portal/syllabus-coverage"
                   className="flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-secondary"
                 >
                   <BookOpen className="h-4 w-4" />
-                  Syllabus
+                  Syllabus Coverage
                 </Link>
               </li>
               <li>
@@ -119,6 +128,15 @@ const Footer = () => {
                 >
                   <MessageSquare className="h-4 w-4" />
                   Faculty Feedback
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/portal/roadmap"
+                  className="flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-secondary"
+                >
+                  <Target className="h-4 w-4" />
+                  Roadmap
                 </Link>
               </li>
             </ul>
