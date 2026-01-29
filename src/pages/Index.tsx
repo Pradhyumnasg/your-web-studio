@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="hero-gradient relative min-h-[85vh] flex items-center overflow-hidden">
+      <section className="hero-gradient relative min-h-[85vh] flex items-center overflow-hidden z-0">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-secondary/20 blur-3xl animate-pulse" />
